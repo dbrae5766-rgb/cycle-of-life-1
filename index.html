@@ -1,366 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cycle of Life Laundromat | Clean Clothes, Fresh Start</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cycle of Life Laundromat | Clean Clothes, Fresh Start</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --sage: #7a9e7e;
-            --sage-light: #a8c5aa;
-            --lavender: #c9b1d4;
-            --lavender-soft: #e8dde8;
-            --coral: #e8a598;
-            --coral-soft: #f5d4ce;
-            --navy: #2d3a4a;
-            --cream: #faf8f5;
-            --white: #ffffff;
-        }
+<style>
+:root {
+    --sage: #7a9e7e;
+    --sage-light: #a8c5aa;
+    --lavender: #c9b1d4;
+    --lavender-soft: #e8dde8;
+    --coral: #e8a598;
+    --coral-soft: #f5d4ce;
+    --navy: #2d3a4a;
+    --cream: #faf8f5;
+    --white: #ffffff;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background-color: var(--cream);
-            color: var(--navy);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+}
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(250, 248, 245, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 5%;
-            box-shadow: 0 2px 20px rgba(45, 58, 74, 0.08);
-        }
+/* NAV */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(250,248,245,0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 5%;
+}
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--navy);
-            text-decoration: none;
-        }
+.logo-text {
+    font-family: 'Playfair Display';
+    font-size: 1.5rem;
+    font-weight: 700;
+}
 
-        .logo-text span {
-            color: var(--coral);
-        }
+.logo-text span { color: var(--coral); }
 
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--navy);
-            font-weight: 500;
-        }
+.nav-links a {
+    text-decoration: none;
+    color: var(--navy);
+}
 
-        .mobile-menu {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
 
-        .mobile-menu span {
-            width: 25px;
-            height: 3px;
-            background: var(--navy);
-        }
+.mobile-menu span {
+    width: 25px;
+    height: 3px;
+    background: var(--navy);
+}
 
-        /* HERO */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 5% 80px;
-        }
+/* HERO */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 5% 80px;
+    position: relative;
+}
 
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
+.hero-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
 
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-        }
+.hero-content h1 {
+    font-family: 'Playfair Display';
+    font-size: 3.5rem;
+    line-height: 1.1;
+}
 
-        .hero-content h1 span {
-            color: var(--sage);
-            display: block;
-        }
+.hero-content span {
+    color: var(--sage);
+    display: block;
+}
 
-        .hero-image img {
-            width: 100%;
-            border-radius: 30px;
-            box-shadow: 0 30px 60px rgba(45, 58, 74, 0.15);
-        }
+.hero-image img {
+    width: 100%;
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
 
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-        }
+/* BUTTONS */
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+}
 
-        .btn-primary {
-            background: var(--coral);
-            color: white;
-        }
+.btn-primary {
+    background: var(--coral);
+    color: white;
+}
 
-        .btn-secondary {
-            border: 2px solid var(--navy);
-            color: var(--navy);
-        }
+.btn-secondary {
+    border: 2px solid var(--navy);
+    color: var(--navy);
+}
 
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
 
-        /* FEATURES */
-        .features {
-            padding: 100px 5%;
-            background: white;
-        }
+/* FEATURES */
+.features {
+    padding: 100px 5%;
+    background: white;
+}
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
 
-        .feature-card {
-            background: var(--cream);
-            padding: 2rem;
-            border-radius: 20px;
-        }
+.feature-card {
+    background: var(--cream);
+    padding: 2.5rem;
+    border-radius: 20px;
+    transition: 0.3s;
+}
 
-        /* SERVICES */
-        .services {
-            padding: 100px 5%;
-            background: linear-gradient(135deg, var(--lavender-soft), var(--coral-soft));
-        }
+.feature-card:hover {
+    transform: translateY(-10px);
+}
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
+/* SERVICES */
+.services {
+    padding: 100px 5%;
+    background: linear-gradient(135deg, var(--lavender-soft), var(--coral-soft));
+}
 
-        .service-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-        }
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
 
-        /* INFO */
-        .info-section {
-            padding: 100px 5%;
-        }
+.service-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+}
 
-        .info-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
+/* INFO */
+.info-section {
+    padding: 100px 5%;
+}
 
-        .hours-box, .location-box {
-            background: var(--cream);
-            padding: 2rem;
-            border-radius: 20px;
-        }
+.info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+}
 
-        /* CONTACT */
-        .contact {
-            padding: 100px 5%;
-            background: var(--navy);
-            color: white;
-        }
+.hours-box, .location-box {
+    background: var(--cream);
+    padding: 3rem;
+    border-radius: 20px;
+}
 
-        .contact-form {
-            display: grid;
-            gap: 1rem;
-        }
+/* CONTACT */
+.contact {
+    padding: 100px 5%;
+    background: var(--navy);
+    color: white;
+}
 
-        input, textarea {
-            padding: 1rem;
-            border-radius: 10px;
-            border: none;
-        }
+.contact-form {
+    display: grid;
+    gap: 1rem;
+    max-width: 500px;
+    margin: auto;
+}
 
-        .btn-submit {
-            background: var(--coral);
-            padding: 1rem;
-            border: none;
-            border-radius: 50px;
-            color: white;
-            cursor: pointer;
-        }
+input, textarea {
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+}
 
-        footer {
-            padding: 2rem;
-            text-align: center;
-            background: var(--navy);
-            color: white;
-        }
+.btn-submit {
+    background: var(--coral);
+    padding: 1rem;
+    border: none;
+    border-radius: 50px;
+    color: white;
+}
 
-        /* MOBILE */
-        @media (max-width: 900px) {
-            .hero-container,
-            .info-container {
-                grid-template-columns: 1fr;
-            }
+/* MOBILE */
+@media (max-width: 900px) {
+    .hero-container,
+    .info-container {
+        grid-template-columns: 1fr;
+    }
 
-            .nav-links {
-                display: none;
-            }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 5%;
+        background: white;
+        padding: 1rem;
+        border-radius: 10px;
+    }
 
-            .mobile-menu {
-                display: flex;
-            }
+    .nav-links.active {
+        display: flex;
+    }
 
-            .nav-links.active {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                right: 5%;
-                background: white;
-                padding: 1rem;
-                border-radius: 10px;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+    .mobile-menu {
+        display: flex;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <nav>
-    <div class="nav-container">
-        <a class="logo-text">Cycle <span>of</span> Life</a>
+<div class="nav-container">
+    <div class="logo-text">Cycle <span>of</span> Life</div>
 
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#hours">Hours</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#hours">Hours & Location</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
-        <div class="mobile-menu" id="menuBtn">
-            <span></span><span></span><span></span>
-        </div>
+    <div class="mobile-menu" id="menuBtn">
+        <span></span><span></span><span></span>
     </div>
+</div>
 </nav>
 
 <section class="hero" id="home">
-    <div class="hero-container">
+<div class="hero-container">
 
-        <div class="hero-content">
-            <h1>Where Every Load <span>Tells a Story</span></h1>
-            <p>Clean clothes, warm space, fresh start.</p>
+<div class="hero-content">
+    <h1>Where Every Load <span>Tells a Story</span></h1>
+    <p>Your neighborhood laundromat with comfort, care, and community.</p>
 
-            <div class="cta-buttons">
-                <a class="btn btn-primary" href="#services">Services</a>
-                <a class="btn btn-secondary" href="#hours">Find Us</a>
-            </div>
-        </div>
-
-        <div class="hero-image">
-            <img src="https://i.ibb.co/zVnsq92V/image.png" alt="laundromat">
-        </div>
-
+    <div class="cta-buttons">
+        <a href="#services" class="btn btn-primary">Our Services</a>
+        <a href="#hours" class="btn btn-secondary">Find Us</a>
     </div>
+</div>
+
+<div class="hero-image">
+    <img src="https://i.ibb.co/zVnsq92V/image.png">
+</div>
+
+</div>
 </section>
 
 <section class="features">
-    <div class="features-grid">
-        <div class="feature-card">Eco-Friendly</div>
-        <div class="feature-card">Fast Wash</div>
-        <div class="feature-card">Comfort Space</div>
-        <div class="feature-card">Safe & Clean</div>
-    </div>
+<div class="features-grid">
+
+<div class="feature-card">
+    <h3>🌿 Eco-Friendly</h3>
+    <p>Energy saving machines and water efficiency.</p>
+</div>
+
+<div class="feature-card">
+    <h3>⚡ Fast Wash</h3>
+    <p>Clean clothes in under 45 minutes.</p>
+</div>
+
+<div class="feature-card">
+    <h3>☕ Comfort Space</h3>
+    <p>WiFi, seating, and coffee while you wait.</p>
+</div>
+
+<div class="feature-card">
+    <h3>🛡️ Safe & Clean</h3>
+    <p>Sanitized machines and 24/7 security.</p>
+</div>
+
+</div>
 </section>
 
 <section class="services" id="services">
-    <div class="services-grid">
-        <div class="service-item">Self-Service</div>
-        <div class="service-item">Wash & Fold</div>
-        <div class="service-item">Dry Cleaning</div>
-        <div class="service-item">Commercial</div>
-    </div>
+<div class="services-grid">
+
+<div class="service-item">
+<h3>Self-Service Laundry</h3>
+<p>Modern machines with card payment support.</p>
+</div>
+
+<div class="service-item">
+<h3>Wash & Fold</h3>
+<p>Drop off and pick up same day service.</p>
+</div>
+
+<div class="service-item">
+<h3>Dry Cleaning</h3>
+<p>Professional care for delicate items.</p>
+</div>
+
+<div class="service-item">
+<h3>Commercial Service</h3>
+<p>Bulk laundry for businesses.</p>
+</div>
+
+</div>
 </section>
 
 <section class="info-section" id="hours">
-    <div class="info-container">
-        <div class="hours-box">
-            <h3>Hours</h3>
-            <p>Mon–Fri 6AM–10PM</p>
-            <p>Sat 7AM–10PM</p>
-            <p>Sun 8AM–9PM</p>
-        </div>
+<div class="info-container">
 
-        <div class="location-box">
-            <h3>Location</h3>
-            <p>123 Fresh Start Ave</p>
-        </div>
-    </div>
+<div class="hours-box">
+<h3>Hours</h3>
+<p>Mon–Fri: 6AM–10PM</p>
+<p>Sat: 7AM–10PM</p>
+<p>Sun: 8AM–9PM</p>
+</div>
+
+<div class="location-box">
+<h3>Location</h3>
+<p>123 Fresh Start Avenue</p>
+<p>Your City, ST</p>
+</div>
+
+</div>
 </section>
 
 <section class="contact" id="contact">
-    <form class="contact-form">
-        <input placeholder="Name">
-        <input placeholder="Email">
-        <textarea placeholder="Message"></textarea>
-        <button class="btn-submit">Send</button>
-    </form>
+<form class="contact-form">
+<input placeholder="Name">
+<input placeholder="Email">
+<textarea placeholder="Message"></textarea>
+<button class="btn-submit">Send</button>
+</form>
 </section>
 
-<footer>
-    © 2026 Cycle of Life
+<footer style="text-align:center; padding:2rem; background:var(--navy); color:white;">
+© 2026 Cycle of Life
 </footer>
 
 <script>
-const menuBtn = document.getElementById('menuBtn');
-const navLinks = document.getElementById('navLinks');
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
 
-menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
 });
 </script>
 
