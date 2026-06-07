@@ -9,34 +9,41 @@
 
 <style>
 :root {
-    --sage: #7a9e7e;
-    --coral: #e8a598;
-    --navy: #2d3a4a;
-    --cream: #faf8f5;
+    --sage:#7a9e7e;
+    --coral:#e8a598;
+    --navy:#2d3a4a;
+    --cream:#faf8f5;
 }
 
-* { margin:0; padding:0; box-sizing:border-box; }
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--navy);
+    font-family:'DM Sans', sans-serif;
+    background:var(--cream);
+    color:var(--navy);
 }
 
 /* NAV */
 nav {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(250,248,245,0.95);
-    padding: 1rem 5%;
-    z-index: 1000;
+    position:fixed;
+    width:100%;
+    top:0;
+    padding:1rem 5%;
+    background:rgba(250,248,245,0.95);
+    backdrop-filter:blur(10px);
+    z-index:1000;
 }
 
 .nav-container {
     display:flex;
     justify-content:space-between;
     align-items:center;
+    max-width:1200px;
+    margin:auto;
 }
 
 .logo-text {
@@ -45,7 +52,7 @@ nav {
     font-weight:700;
 }
 
-.logo-text span { color: var(--coral); }
+.logo-text span { color:var(--coral); }
 
 .nav-links {
     display:flex;
@@ -56,6 +63,7 @@ nav {
 .nav-links a {
     text-decoration:none;
     color:var(--navy);
+    font-weight:500;
 }
 
 .mobile-menu {
@@ -84,13 +92,14 @@ nav {
     margin:auto;
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:3rem;
+    gap:4rem;
     align-items:center;
 }
 
 .hero-content h1 {
-    font-size:3.2rem;
+    font-size:3.3rem;
     font-family:'Playfair Display';
+    line-height:1.1;
 }
 
 .hero-content span {
@@ -101,7 +110,7 @@ nav {
 .hero-image img {
     width:100%;
     border-radius:25px;
-    box-shadow:0 20px 50px rgba(0,0,0,0.15);
+    box-shadow:0 25px 60px rgba(0,0,0,0.15);
 }
 
 .cta-buttons {
@@ -127,22 +136,64 @@ nav {
     color:var(--navy);
 }
 
-/* FEATURES */
+/* ================= FEATURES (UPGRADED) ================= */
+
 .features {
-    padding:100px 5%;
+    padding:110px 5%;
     background:white;
 }
 
+.section-title {
+    text-align:center;
+    margin-bottom:3rem;
+}
+
+.section-title h2 {
+    font-family:'Playfair Display';
+    font-size:2.8rem;
+    margin-bottom:0.5rem;
+}
+
+.section-title p {
+    opacity:0.7;
+}
+
 .features-grid {
+    max-width:1200px;
+    margin:auto;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(4,1fr);
     gap:2rem;
 }
 
 .feature-card {
-    background:var(--cream);
-    padding:2rem;
-    border-radius:20px;
+    background:linear-gradient(145deg,#faf8f5,#ffffff);
+    padding:2.5rem 2rem;
+    border-radius:22px;
+    border:1px solid rgba(0,0,0,0.05);
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    transition:0.25s;
+    text-align:left;
+}
+
+.feature-card:hover {
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.12);
+}
+
+.feature-card .icon {
+    font-size:2rem;
+    margin-bottom:1rem;
+}
+
+.feature-card h3 {
+    margin-bottom:0.7rem;
+}
+
+.feature-card p {
+    font-size:0.95rem;
+    opacity:0.75;
+    line-height:1.6;
 }
 
 /* SERVICES */
@@ -152,6 +203,8 @@ nav {
 }
 
 .services-grid {
+    max-width:1200px;
+    margin:auto;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:2rem;
@@ -163,26 +216,29 @@ nav {
     border-radius:15px;
 }
 
-/* INFO (IMPROVED) */
+/* INFO */
 .info-section {
     padding:100px 5%;
 }
 
 .info-container {
+    max-width:1200px;
+    margin:auto;
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:3rem;
 }
 
 .hours-box, .location-box {
-    background:var(--cream);
+    background:white;
     padding:3rem;
     border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
 .location-box p {
-    font-size:1.1rem;
     line-height:2;
+    font-size:1.05rem;
 }
 
 /* CONTACT */
@@ -199,9 +255,9 @@ nav {
 }
 
 .contact-form {
+    margin-top:2rem;
     display:grid;
     gap:1rem;
-    margin-top:2rem;
 }
 
 input, textarea {
@@ -212,14 +268,28 @@ input, textarea {
 
 .btn-submit {
     background:var(--coral);
-    padding:1rem;
     border:none;
+    padding:1rem;
     border-radius:50px;
     color:white;
     cursor:pointer;
 }
 
+/* FOOTER */
+footer {
+    text-align:center;
+    padding:2rem;
+    background:var(--navy);
+    color:white;
+}
+
 /* MOBILE */
+@media (max-width:1100px) {
+    .features-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
 @media (max-width:900px) {
     .hero-container,
     .info-container {
@@ -237,9 +307,23 @@ input, textarea {
         flex-direction:column;
     }
 
-    .nav-links.active { display:flex; }
+    .nav-links.active {
+        display:flex;
+    }
 
-    .mobile-menu { display:flex; }
+    .mobile-menu {
+        display:flex;
+    }
+
+    .hero-content h1 {
+        font-size:2.5rem;
+    }
+}
+
+@media (max-width:600px) {
+    .features-grid {
+        grid-template-columns:1fr;
+    }
 }
 </style>
 </head>
@@ -268,7 +352,7 @@ input, textarea {
 
 <div class="hero-content">
     <h1>Where Every Load <span>Tells a Story</span></h1>
-    <p>Clean, warm, community-focused laundromat.</p>
+    <p>Clean, modern, community-focused laundromat experience.</p>
 
     <div class="cta-buttons">
         <a href="#services" class="btn btn-primary">Services</a>
@@ -284,20 +368,64 @@ input, textarea {
 </section>
 
 <section class="features">
+
+<div class="section-title">
+    <h2>Why Choose Us</h2>
+    <p>Everything you need for a better laundry experience</p>
+</div>
+
 <div class="features-grid">
-<div class="feature-card">Eco Friendly</div>
-<div class="feature-card">Fast Wash</div>
-<div class="feature-card">Comfort Space</div>
-<div class="feature-card">Safe & Clean</div>
+
+<div class="feature-card">
+<div class="icon">🌿</div>
+<h3>Eco-Friendly</h3>
+<p>Efficient machines that save water and energy.</p>
+</div>
+
+<div class="feature-card">
+<div class="icon">⚡</div>
+<h3>Fast Service</h3>
+<p>Get laundry done quickly without compromise.</p>
+</div>
+
+<div class="feature-card">
+<div class="icon">☕</div>
+<h3>Comfort Space</h3>
+<p>WiFi, seating, and coffee while you wait.</p>
+</div>
+
+<div class="feature-card">
+<div class="icon">🛡️</div>
+<h3>Safe & Clean</h3>
+<p>Secure, sanitized, and well-maintained facility.</p>
+</div>
+
 </div>
 </section>
 
 <section class="services" id="services">
 <div class="services-grid">
-<div class="service-item">Self Service</div>
-<div class="service-item">Wash & Fold</div>
-<div class="service-item">Dry Cleaning</div>
-<div class="service-item">Commercial</div>
+
+<div class="service-item">
+<h3>Self Service</h3>
+<p>Modern machines with easy payment options.</p>
+</div>
+
+<div class="service-item">
+<h3>Wash & Fold</h3>
+<p>Drop off and pick up same day.</p>
+</div>
+
+<div class="service-item">
+<h3>Dry Cleaning</h3>
+<p>Professional garment care.</p>
+</div>
+
+<div class="service-item">
+<h3>Commercial</h3>
+<p>Bulk laundry for businesses.</p>
+</div>
+
 </div>
 </section>
 
@@ -313,13 +441,9 @@ input, textarea {
 
 <div class="location-box">
 <h2>Location</h2>
-
 <p><strong>Cycle of Life Laundromat</strong></p>
 <p>123 Fresh Start Avenue</p>
 <p>Milford, TX</p>
-
-<br>
-
 <p><strong>Phone:</strong> (555) 123-4567</p>
 <p><strong>Email:</strong> hello@cycleoflife.com</p>
 </div>
@@ -344,6 +468,10 @@ input, textarea {
 </div>
 </section>
 
+<footer>
+© 2026 Cycle of Life Laundromat
+</footer>
+
 <script>
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
@@ -360,10 +488,7 @@ document.getElementById("feedbackForm").addEventListener("submit", async (e) => 
     const email = document.getElementById("email").value;
     const feedback = document.getElementById("feedback").value;
 
-    const data = {
-        email: email,
-        feedback: feedback
-    };
+    const data = { email, feedback };
 
     try {
         const res = await fetch(
@@ -376,9 +501,9 @@ document.getElementById("feedbackForm").addEventListener("submit", async (e) => 
         );
 
         document.getElementById("status").innerText =
-            res.ok ? "Sent!" : "Failed";
-    } catch (err) {
-        document.getElementById("status").innerText = "Error";
+            res.ok ? "Sent successfully!" : "Failed to send";
+    } catch {
+        document.getElementById("status").innerText = "Error sending";
     }
 });
 </script>
